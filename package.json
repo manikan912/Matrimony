@@ -24,13 +24,26 @@
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.0.1",
     "@nestjs/jwt": "^11.0.2",
+    "@nestjs/passport": "^11.0.0",
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.19.3",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "prisma": "^6.19.3",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "argon2": "^0.30.0",
+    "class-validator": "^0.14.0",
+    "class-transformer": "^0.5.1",
+    "uuid": "^9.0.0",
+    "nodemailer": "^6.9.3",
+    "cookie-parser": "^1.4.7",
+    "@nestjs/throttler": "^6.5.0",
+    "@nestjs/schedule": "^6.0.0",
+    "twilio": "^4.0.0",
+    "razorpay": "^2.8.0",
+    "@supabase/supabase-js": "^2.0.0",
+    "firebase-admin": "^11.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -55,7 +68,8 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "@types/uuid": "^9.0.0"
   },
   "jest": {
     "moduleFileExtensions": [

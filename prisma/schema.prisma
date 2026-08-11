@@ -13,14 +13,37 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  mobile     String   @unique
+  id         String  @id @default(uuid())
+  mobile     String  @unique
   name       String?
-  email      String?  @unique
+  email      String? @unique
   password   String?
-  role       String   @default("USER")
-  isVerified Boolean  @default(false)
+  role       String  @default("USER")
+  isVerified Boolean @default(false)
 
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  refreshTokens      RefreshToken[]
+  verificationTokens VerificationToken[]
+}
+
+model RefreshToken {
+  id         String   @id @default(uuid())
+  hashedToken String  @unique
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  revoked    Boolean  @default(false)
   createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  expiresAt   DateTime?
+}
+
+model VerificationToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  type      String
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
 }
